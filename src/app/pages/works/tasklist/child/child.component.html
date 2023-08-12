@@ -1,0 +1,10 @@
+<div class="header">
+  <div class="count">
+          <div>Count of Tasks <input type="text" class="count-number" [(ngModel)]="count"></div>
+  </div>
+</div>
+<div class="hr"></div>
+<div class="adding-block">
+  <input type="text" class="input" [(ngModel)]="name">
+  <button type="button" class="add" (click)="addName(name)">Add</button>
+</div>

@@ -1,0 +1,20 @@
+<div class="wrapper">
+    <div class="form">
+        <div class="bad">
+            <p>Bad words:</p>
+            <div>
+                <input type="text" ngDefaultControl [(ngModel)]="bad_words" class="bad_words">
+            </div>
+        </div>
+        <div class="input">
+            <input type="text" ngDefaultControl [(ngModel)]="words" class="text" [class.error]="error"
+                [placeholder]="error ? 'Please write a word!' : 'word here...' ">
+            <button type="button" class="add" (click)="add()">Add</button>
+            <button type="button" class="reset" (click)="reset()">Reset</button>
+        </div>
+        <textarea class="textarea" ngDefaultControl [(ngModel)]="userText" [class.error]="error"
+            [placeholder]="error ? 'Please write a text!' : 'text here...'">
+        </textarea>
+        <button type="button" class="cenzor" (click)="cenzor()">Cenzor</button>
+    </div>
+</div>

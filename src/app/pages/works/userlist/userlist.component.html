@@ -1,0 +1,46 @@
+<div class="wrapper">
+    <div class="enterField">
+        <p class="namesInput">Login</p>
+        <input type="text" [(ngModel)]="login" ngDefaultControl (input)="validLogin()" id="login"
+            placeholder="Enter login" [ngClass]="{err : wrongL}" required>
+        <p class="namesInput">Password</p>
+        <input type="text" [(ngModel)]="password" ngDefaultControl (input)="validPassword()" id="password"
+            placeholder="Enter password" [ngClass]="{err : wrongP}" required>
+        <p class="namesInput">Email address</p>
+        <input type="email" [(ngModel)]="email" ngDefaultControl (input)="validEmail()" id="email"
+            placeholder="Enter email" [ngClass]="{err : wrongE}" required>
+        <ng-container *ngIf="new; else elseTemplate">
+            <button type="button" [disabled]="wrong" class="add" (click)="renderEdit(i)">Add user</button>
+        </ng-container>
+        <ng-template #elseTemplate>
+            <button type="button" [disabled]="wrong" class="add" (click)="render()">Add user</button>
+        </ng-template>
+    </div>
+
+    <div class="tableField">
+        <table class="table">
+            <thead>
+                <tr class="slim"></tr>
+                <tr>
+                    <th class="th">#</th>
+                    <th class="th">Login</th>
+                    <th class="th">Password</th>
+                    <th class="th">Email</th>
+                    <th class="th">Edit</th>
+                    <th class="th">Delete</th>
+                </tr>
+                <tr class="slim"></tr>
+            </thead>
+            <tbody class="tableBody" *ngFor="let item of arr; index as i">
+                <tr>
+                <th>{{ i+1 }}</th>
+                <th>{{ item[0] }}</th>
+                <th>{{ item[1] }}</th>
+                <th>{{ item[2] }}</th>
+                <th><button class="ed" (click)="editUser(i)" [ngStyle]="objEditStyle">Edit</button></th>
+                <th><button class="del" (click)="deleteUser(i)" [ngStyle]="objDeleteStyle">Delete</button></th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

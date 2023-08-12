@@ -1,0 +1,10 @@
+app/
+    components/
+        header.component
+    pages/
+        home.component
+        works.component/
+            works-header.component/
+            cenzor.component
+            userlist.component
+            tasklist.component

@@ -1,0 +1,28 @@
+
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link disabled">Last works >>></a>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" [routerLink]="[ '/works/cenzor']" routerLinkActive="active">Cenzor</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="[ '/works/userlist']" routerLinkActive="active">Users</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="[ '/works/tasklist']" routerLinkActive="active">Task</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled long"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled red">Back to >>></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link red"  [routerLink]="[ '/home']" routerLinkActive="active">Home</a>
+        </li>
+      </ul>
+
+<main>
+    <router-outlet></router-outlet>
+</main>

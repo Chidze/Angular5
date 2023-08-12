@@ -1,0 +1,37 @@
+<div class="container">
+    <app-child [count]="length" (addTask)="checkName($event)"></app-child>
+    <div class="task-box">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="th">#</th>
+                    <th class="th">Name</th>
+                    <th class="th">Check</th>
+                    <th class="th">done/in progress</th>
+                    <th class="th">Edit</th>
+                    <th class="th">Delete</th>
+                </tr>
+            </thead>
+            <tbody class="tableBody" *ngFor="let item of arr; index as i">
+                <tr>
+                    <th #count>{{ i+1 }}</th>
+                    <th>{{ arr[i] }}</th>
+                    <th><input type="checkbox" [(ngModel)]="check[i]" ngDefaultControl (change)="process(i)"></th>
+                    <th *ngIf="!done[i]"><input type="checkbox" value="" [ngStyle]="checkStyle">
+                        <p [ngClass]="{'prog': true}">In progress</p>
+                    </th>
+                    <th *ngIf="done[i]"><input type="checkbox" value="" [ngStyle]="checkStyle">
+                        <p [ngClass]="{'done': true}">Done</p>
+                    </th>
+                    <th><button (click)="editTask(i)" [ngStyle]="editStyle">Edit</button></th>
+                    <th><button (click)="deleteTask(i)" [ngStyle]="deleteStyle" [disabled]="!done[i]">Delete</button>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+        <div class="editField" *ngIf="show">
+            <input type="text" class="editTask" [(ngModel)]="task">
+            <button type="button" class="save" (click)="saveEdit()">save</button>
+        </div>
+    </div>
+</div>

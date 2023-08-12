@@ -1,0 +1,67 @@
+.container{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 70px;
+    font-family: sans-serif;
+}
+table{
+    margin-top: 25px;
+    width: 90%;
+    border-top: 1px solid rgb(214, 214, 214);
+    border-collapse: collapse;
+}
+
+tbody tr:hover{
+   background-color: rgba(210, 210, 210, 0.593);
+}
+
+.th{
+    height: 40px;
+    border-bottom: 1px solid rgb(214, 214, 214);
+}
+th{
+    height: 40px;
+    
+}
+.prog{
+    color: rgb(199, 14, 14);
+    font-weight: 300;
+    background-color: white;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}
+.done{
+    color: rgb(7, 189, 7);
+    font-weight: 300;
+    font-family: sans-serif;
+    background-color: white;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}
+.editField{
+    width: 80%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.save{
+    width: 50px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(27, 175, 27);
+    margin-left: 100px;
+}
+.editTask{
+    width: 200px;
+    height: 28px;
+    border-radius: 5px;
+    border: 2px solid rgb(214, 214, 214);
+}
